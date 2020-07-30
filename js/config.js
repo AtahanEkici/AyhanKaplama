@@ -1,0 +1,1 @@
+window._config={cognito:{userPoolId:"us-east-1_fv9GUJjo8",userPoolClientId:"4n75rfumakc93hjtunccp96std",region:"us-east-1"},api:{invokeUrl:"http://votehere407.s3-website-us-east-1.amazonaws.com/"}};
