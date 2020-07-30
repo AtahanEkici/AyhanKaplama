@@ -8,6 +8,11 @@
     {
          session.setAttribute("listbox","TUR");
          Language_Selected = "TUR";
+    }
+    Boolean Is_Mobile = false;
+    if(request.getHeader("User-Agent").contains("Mobi")) 
+    {
+    Is_Mobile = true;
     } 
 %>                   
 		<!-- Basic -->
@@ -16,11 +21,13 @@
 
 		<title>Ayhan Kaplama</title>
 
-		<meta name="keywords" content="HTML5 Template">
-		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="robots" content="all"/>
+		<meta name="keywords" content="Kaplama,Vernik,Vernikleme,Eskitme,Ayhan Kaplama,Eskit,Kapla,Bakır Kaplama"/>
+		<meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
+                <meta name="google-site-verification" content="pJZGbjWp4qXx1iz8XMW4JJIw0VV54AIxQDjKv6YZ2cQ"/>
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/logo/1.jpeg" type="image"/>
+		<link rel="shortcut icon" href="images/logo/1.webp" type="image"/>
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
@@ -39,8 +46,6 @@
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css"/>
 		<link rel="stylesheet" href="css/theme-elements.css"/>
-		<link rel="stylesheet" href="css/theme-blog.css"/>
-		<link rel="stylesheet" href="css/theme-shop.css"/>
 
 	
 		<!-- Skin CSS -->
@@ -81,22 +86,22 @@
 											<ul class="nav nav-pills text-uppercase text-2">
 <form action="Language" method="post">
 <select name="listbox">
-<% 
-            if(Language_Selected == null || Language_Selected.equals("ENG"))
+<%
+            if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
-                    <option value="ENG" selected>English</option> 
+                     <option value="TUR" selected>Türkçe</option>
 <%
                     }
             else
                     {
 %>
-        <option value="ENG">English</option>
+         <option value="TUR">Türkçe</option>
 <% 
                     }    
 %>    
 <% 
-            if(Language_Selected == null || Language_Selected.equals("GER"))
+            if(Language_Selected.equals("GER"))
                     {
 %>   
                     <option value="GER" selected>Deutsch</option> 
@@ -110,41 +115,41 @@
                     }    
 %> 
         <% 
-            if(session.getAttribute("listbox").equals("TUR"))
+            if(session.getAttribute("listbox").equals("ENG"))
                     {
 %>   
-                    <option value="TUR" selected>Türkçe</option> 
+                    <option value="ENG" selected>English</option> 
 <%
                     }
             else
                     {
 %>
-        <option value="TUR">Türkçe</option>
+       <option value="ENG">English</option>
 <% 
                     }    
 %> 
     </select>
     <% 
-            if(Language_Selected == null || Language_Selected.equals("ENG"))
+            if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
-                    <input type="submit" name ="button3" value="Select">
+                     <input type="submit" name ="button1" value="Seç">
 <%
                     }
             else if(Language_Selected.equals("GER"))
                     {
 %>
-        <input type="submit" name ="button3" value="Wahlen">
+        <input type="submit" name ="button1" value="Wahlen">
 <% 
                     }    
             else
                     {
 %>
-        <input type="submit" name ="button3" value="Seç">
+        <input type="submit" name ="button1" value="Select">
 <% 
                     }    
 %> 
-</form> 
+</form>
 											</ul>
 										</nav>
 									</div>
@@ -154,9 +159,7 @@
 										<nav class="header-nav-top">
 											<ul class="nav nav-pills">
 												<li class="nav-item">
-													<a runat="server" target="iframe2" 
-                                                                                                        href="javascript:window.open('mailto:ayhanozdemir80@outlook.com.tr')"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i>ayhanozdemir80@outlook.com.tr</a>
-                                                                                                        <iframe style="display: none" name="iframe2"></iframe>
+													<a alt="E-Mail" href="mailto:ayhanozdemir80@outlook.com.tr" target="_blank"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i>ayhanozdemir80@outlook.com.tr</a>
 												</li>
 												<li class="nav-item">
 													<a alt="Ayhan Özdemir"
@@ -175,7 +178,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="MainPage">
-                                                                                    <img src="images/logo/2.jpeg" class="bglogosticky" alt="site logo" style="width:auto;max-height:70px;"/>  
+                                                                                    <img src="images/logo/2.webp" class="bglogosticky" alt="site logo" style="width:auto;max-height:70px;"/>  
 										</a>
 									</div>
 								</div>
@@ -285,9 +288,20 @@
 
 			<div role="main" class="main">
 
-				<section style="background-color:#212529;margin-bottom: 0px;"class="page-header page-header-sm">
+								<section style="background-color:#212529;margin-bottom: 0px;<%
+if(Is_Mobile == true)
+{
+%>  
+padding:3%;                                                     
+<%        
+}
+%>"class="page-header page-header-sm">
 					<div class="container">
-						<div class="row">
+						<%
+if(Is_Mobile == false)
+{
+%>  
+<div class="row">
 							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
 								<h1 data-title-border><%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
@@ -361,7 +375,41 @@
                                                                                                                     
 								</ul>
 							</div>
-						</div>
+						</div>                                                     
+<%        
+}
+else 
+{
+%> 
+<div class="row">
+							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+								<h1 data-title-border><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            About Us
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Über Uns
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Hakkımızda
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></h1>
+							</div>
+						</div>                                                   
+<%
+ }
+%>
 					</div>
 				</section>                                    
 				<div class="container pb-1">
@@ -450,16 +498,16 @@
 						<div class="row align-items-center">
                                                     <div class="col-md-auto">
 								<p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000"></p>
-                                                                <p style="font-size:30px" class="mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1500"> <span class="alternative-font" style="margin-bottom:10%;">Ayhan Kaplama</span>
-									<p><strong>Ayhan Özdemir</strong>- İşyeri Sahibi</p> 
+                                                                <p style="font-size:30px" class="mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1250"> <span class="alternative-font" style="margin-bottom:20%;">Ayhan Kaplama</span>
+									<p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1250"><strong>Ayhan Özdemir</strong>- İşyeri Sahibi</p> 
 							</div>
                                                     
-							<div class="col-md-8 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1500" align="left">
+							<div class="col-md-8 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1250" align="left">
                                                             <div class="owl-carousel owl-theme nav-inside mb-0" data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}">
-                                                               <img class="img-fluid" src="images/Anasayfa/1.jpeg" alt="foto"/>
-                                                               <img class="img-fluid" src="images/Anasayfa/2.jpeg" alt="foto"/> 
-                                                               <img class="img-fluid" src="images/Anasayfa/3.jpeg" alt="foto"/> 
-                                                               <img class="img-fluid" src="images/Anasayfa/4.jpeg" alt="foto"/>
+                                                               <img class="img-fluid" src="images/Anasayfa/1.webp" alt="foto"/>
+                                                               <img class="img-fluid" src="images/Anasayfa/2.webp" alt="foto"/> 
+                                                               <img class="img-fluid" src="images/Anasayfa/3.webp" alt="foto"/> 
+                                                               <img class="img-fluid" src="images/Anasayfa/4.webp" alt="foto"/>
 								</div>
 							</div>
 						</div>
@@ -516,26 +564,13 @@
 		<!-- Vendor -->
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
-		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-		<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>
-		<script src="vendor/popper/umd/popper.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="vendor/common/common.min.js"></script>
-		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
-		<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
 		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
-		<script src="vendor/isotope/jquery.isotope.min.js"></script>
 		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-		<script src="vendor/vide/jquery.vide.min.js"></script>
-		<script src="vendor/vivus/vivus.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
-		
-		<!-- Theme Custom -->
-		<script src="js/custom.js"></script>
 		
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>

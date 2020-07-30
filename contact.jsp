@@ -10,20 +10,27 @@
          session.setAttribute("listbox","ENG");
          Language_Selected = "TUR";
     }
+    Boolean Is_Mobile = false;
+    if(request.getHeader("User-Agent").contains("Mobi")) 
+    {
+    Is_Mobile = true;
+    } 
 %>
            
 		<!-- Basic -->
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title>Ayhan Kaplama</title>
-
-		<meta name="keywords" content="HTML5 Template" />
-		<meta name="description" content="Porto - Responsive HTML5 Template">
+                
+                <meta name="robots" content="all"/>
+		<meta name="keywords" content="Kaplama,Vernik,Vernikleme,Eskitme,Ayhan Kaplama,Eskit,Kapla,Bakır Kaplama"/>
+		<meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
+                <meta name="google-site-verification" content="pJZGbjWp4qXx1iz8XMW4JJIw0VV54AIxQDjKv6YZ2cQ"/>
+                
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/logo/1.jpeg" type="image"/>
+		<link rel="shortcut icon" href="images/logo/1.webp" type="image"/>
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -71,19 +78,19 @@
 									<div class="header-row">
 										<nav class="header-nav-top">
 											<ul class="nav nav-pills text-uppercase text-2">
-												 <form action="Language" method="post">
+<form action="Language" method="post">
 <select name="listbox">
-<% 
-            if(Language_Selected == null || Language_Selected.equals("ENG"))
+<%
+            if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
-                    <option value="ENG" selected>English</option> 
+                     <option value="TUR" selected>Türkçe</option>
 <%
                     }
             else
                     {
 %>
-        <option value="ENG">English</option>
+         <option value="TUR">Türkçe</option>
 <% 
                     }    
 %>    
@@ -102,41 +109,41 @@
                     }    
 %> 
         <% 
-            if(session.getAttribute("listbox").equals("TUR"))
+            if(session.getAttribute("listbox").equals("ENG"))
                     {
 %>   
-                    <option value="TUR" selected>Türkçe</option> 
+                    <option value="ENG" selected>English</option> 
 <%
                     }
             else
                     {
 %>
-        <option value="TUR">Türkçe</option>
+       <option value="ENG">English</option>
 <% 
                     }    
 %> 
     </select>
     <% 
-            if(Language_Selected == null || Language_Selected.equals("ENG"))
+            if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
-                    <input type="submit" name ="button2" value="Select">
+                     <input type="submit" name ="button1" value="Seç">
 <%
                     }
             else if(Language_Selected.equals("GER"))
                     {
 %>
-        <input type="submit" name ="button2" value="Wahlen">
+        <input type="submit" name ="button1" value="Wahlen">
 <% 
                     }    
             else
                     {
 %>
-        <input type="submit" name ="button2" value="Seç">
+        <input type="submit" name ="button1" value="Select">
 <% 
                     }    
 %> 
-</form>  
+</form>
 </ul>
 										</nav>
 									</div>
@@ -146,9 +153,7 @@
 										<nav class="header-nav-top">
 											<ul class="nav nav-pills">
 												<li class="nav-item">
-													<a runat="server" target="iframe2" 
-                                                                                                        href="javascript:window.open('mailto:ayhanozdemir80@outlook.com.tr')"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i>ayhanozdemir80@outlook.com.tr</a>
-                                                                                                        <iframe style="display: none" name="iframe2"></iframe>
+													<a alt="E-Mail" href="mailto:ayhanozdemir80@outlook.com.tr" target="_blank"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i>ayhanozdemir80@outlook.com.tr</a>
 												</li>
 												<li class="nav-item">
 													<a alt="Ayhan Özdemir"
@@ -167,7 +172,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="MainPage">
-                                                                                    <img src="images/logo/2.jpeg" class="bglogosticky" alt="site logo" style="width:auto;max-height:70px;"/>   
+                                                                                    <img src="images/logo/2.webp" class="bglogosticky" alt="site logo" style="width:auto;max-height:70px;"/>   
 										</a>
 									</div>
 								</div>
@@ -275,9 +280,20 @@
 			</header>
 
 			<div role="main" class="main">
-				<section style="margin-bottom: 10px;"class="page-header page-header-sm">
+								<section style="margin-bottom: 10px;<%
+if(Is_Mobile == true)
+{
+%>  
+padding:3%;                                                     
+<%        
+}
+%>"class="page-header page-header-sm">
 					<div class="container">
-						<div class="row">
+<%
+if(Is_Mobile == false)
+{
+%>  
+<div class="row">
 							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
 								<h1 data-title-border><%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
@@ -351,14 +367,48 @@
                                                                                                                     
 								</ul>
 							</div>
-						</div>
+						</div>                                                     
+<%        
+}
+else 
+{
+%> 
+						<div class="row">
+							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+								<h1 data-title-border><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Contact Us
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Kontakt
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            İletişim Bilgileri
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></h1>
+							</div>
+						</div>                                                   
+<%
+ }
+%>
 					</div>
 				</section>
 
 				<div class="container">
 								<div>	
 									<div>
-										<h4>                                <%
+										<h4 class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">                                <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
                                                                                                                         {
                                                                                                                     %>
@@ -380,7 +430,7 @@
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %>  : </h4>
-                                                                                                                    <p> Karayolları 
+                                                                                                                    <p class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300"> Karayolları 
                                                                                                                     
                                                                                                                     <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
@@ -451,7 +501,8 @@
                                                                                                                     %> </strong></p>  
 						</div>
 						<div>
-										<h4><%
+										<h4 class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"> <a href="tel:+905317929158" style="color:#212529"  target="_blank">                               
+                                                                                                                   <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
                                                                                                                         {
                                                                                                                     %>
@@ -464,27 +515,27 @@
                                                                                                                             Telefon
                                                                                                                     <%       
                                                                                                                         }
-                                                                                                                    %>  : </h4>
-										<p>+90 (531) 792 91 58</p>
+                                                                                                                    %>  
+                                                                                                                    : </a></h4>
+                                                                                                                    <p class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300"> <a href="tel:+905317929158" style="color:#212529"  target="_blank">+90 (531) 792 91 58 </a> </p>
 									</div>
 								</div>
 								<div>
 									<div>
-										<h4>GSM : </h4>
-										<p>+90 (531) 792 91 58</p>
+                                                                            <h4 class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"><a  style="color:#212529" href="tel:+905317929158" target="_blank"> GSM : </a></h4>
+										<p class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300"> <a href="tel:+905317929158" style="color:#212529"  target="_blank">+90 (531) 792 91 58 </a> </p>
 									</div>
 								</div>
                                                                  <div>
 									<div>
-										<h4>E-mail : </h4>
-										<p>ayhanozdemir80@outlook.com.tr</p>
+                                                                            <h4 class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"><a style="color:#212529" href="mailto:ayhanozdemir80@outlook.com.tr" target="_blank"> E-mail : </a></h4>
+                                                                            <p class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300"> <a style="color:#212529" href="mailto:ayhanozdemir80@outlook.com.tr" target="_blank"> ayhanozdemir80@outlook.com.tr </a></p>
 									</div>
 								</div>
                                                                 <div>
 									<div>
-										<h4>Google Maps : </h4>
-                                                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.070818658033!2d28.888520115416505!3d41.08929927929268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDA1JzIxLjUiTiAyOMKwNTMnMjYuNiJF!5e0!3m2!1sen!2str!4v1595956300952!5m2!1sen!2str" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-									</div>
+                                                                            <h4 class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"><a style="color:#212529" href="https://www.google.com/maps?q=41.0892993,28.8907088&z=17&hl=tr" target="_blank">Google Maps : </a></h4>
+<iframe class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.070818658033!2d28.888520115416505!3d41.08929927929268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDA1JzIxLjUiTiAyOMKwNTMnMjYuNiJF!5e0!3m2!1str!2str!4v1596031705517!5m2!1str!2str" style="max-width:100%;height:auto;" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>									</div>
 								</div>
 				</div>
 			</div>
@@ -505,7 +556,8 @@
 									<li class="social-icons-facebook"><a href="https://www.facebook.com/AyhanKaplama80/?modal=admin_todo_tour" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
                                                                         <li class="social-icons-clean"><a href="mailto:ayhanozdemir80@outlook.com.tr" target="_blank" title="MailTo"><i class="fa fa-envelope-square"></i></a></li>
 								</ul>
-								<p><strong>Ayhan Kaplama</strong> - <%= new java.util.Date().getYear() + 1900 %> - <%
+								<p class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300"><strong>Ayhan Kaplama</strong> - <%= new java.util.Date().getYear() + 1900 %> - 
+                                                                                                                    <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
                                                                                                                         {
                                                                                                                     %>
@@ -537,32 +589,15 @@
 		<!-- Vendor -->
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
-		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-		<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>
-		<script src="vendor/popper/umd/popper.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="vendor/common/common.min.js"></script>
-		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
-		<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
 		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
-		<script src="vendor/isotope/jquery.isotope.min.js"></script>
-		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-		<script src="vendor/vide/jquery.vide.min.js"></script>
-		<script src="vendor/vivus/vivus.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
 		
-		<!-- Theme Custom -->
-		<script src="js/custom.js"></script>
-		
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
-
-		<!-- Examples -->
-		<script src="js/examples/examples.portfolio.js"></script>
 
 	</body>
 </html>

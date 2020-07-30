@@ -16,6 +16,11 @@
     Object b = slider.get(1);
     Object c = slider.get(2);
     Object d = slider.get(3);
+    Boolean Is_Mobile = false;
+    if(request.getHeader("User-Agent").contains("Mobi")) 
+    {
+    Is_Mobile = true;
+    } 
 %>
             
 		<!-- Basic -->
@@ -24,11 +29,13 @@
 
 		<title>Ayhan Kaplama</title>
 
-		<meta name="keywords" content="HTML5 Template">
-		<meta name="description" content="Porto - Responsive HTML5 Template">
-
+		<meta name="robots" content="all"/>
+		<meta name="keywords" content="Kaplama,Vernik,Vernikleme,Eskitme,Ayhan Kaplama,Eskit,Kapla,Bakır Kaplama"/>
+		<meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
+                <meta name="google-site-verification" content="pJZGbjWp4qXx1iz8XMW4JJIw0VV54AIxQDjKv6YZ2cQ"/>
+                
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/logo/1.jpeg" type="image"/>
+		<link rel="shortcut icon" href="images/logo/1.webp" type="image"/>
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
@@ -39,23 +46,17 @@
 		<!-- Vendor CSS -->
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css"/>
-		<link rel="stylesheet" href="vendor/animate/animate.min.css">
 		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css"/>
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css"/>
 		<link rel="stylesheet" href="css/theme-elements.css"/>
-		<link rel="stylesheet" href="css/theme-blog.css"/>
-		<link rel="stylesheet" href="css/theme-shop.css"/>
-
+                
 		<!-- Skin CSS -->
 		<link rel="stylesheet" href="css/skins/default.css"/> 
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="css/custom.css"/>
-
-		<!-- Head Libs -->
-		<script src="vendor/modernizr/modernizr.min.js"></script>
                 
                 <!-- Added CSS -->
                 <link rel="stylesheet" href="css/slide.css"/>
@@ -90,16 +91,16 @@ width:100%;
 <form action="Language" method="post">
 <select name="listbox">
 <%
-            if(Language_Selected == null || Language_Selected.equals("ENG"))
+            if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
-                    <option value="ENG" selected>English</option> 
+                     <option value="TUR" selected>Türkçe</option>
 <%
                     }
             else
                     {
 %>
-        <option value="ENG">English</option>
+         <option value="TUR">Türkçe</option>
 <% 
                     }    
 %>    
@@ -118,37 +119,37 @@ width:100%;
                     }    
 %> 
         <% 
-            if(session.getAttribute("listbox").equals("TUR"))
+            if(session.getAttribute("listbox").equals("ENG"))
                     {
 %>   
-                    <option value="TUR" selected>Türkçe</option> 
+                    <option value="ENG" selected>English</option> 
 <%
                     }
             else
                     {
 %>
-        <option value="TUR">Türkçe</option>
+       <option value="ENG">English</option>
 <% 
                     }    
 %> 
     </select>
     <% 
-            if(Language_Selected == null || Language_Selected.equals("ENG"))
+            if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
-                    <input type="submit" name ="button1" value="Select" align="center">
+                     <input type="submit" name ="button1" value="Seç">
 <%
                     }
             else if(Language_Selected.equals("GER"))
                     {
 %>
-        <input type="submit" name ="button1" value="Wahlen" align="center">
+        <input type="submit" name ="button1" value="Wahlen">
 <% 
                     }    
             else
                     {
 %>
-        <input type="submit" name ="button1" value="Seç" align="center">
+        <input type="submit" name ="button1" value="Select">
 <% 
                     }    
 %> 
@@ -162,9 +163,7 @@ width:100%;
 										<nav class="header-nav-top">
 											<ul class="nav nav-pills">
 												<li class="nav-item">
-													<a runat="server" target="iframe" 
-                                                                                                        href="javascript:window.open('mailto:ayhanozdemir80@outlook.com.tr')"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i>ayhanozdemir80@outlook.com.tr</a>
-                                                                                                        <iframe style="display: none" name="iframe"></iframe>
+													<a alt="E-Mail" href="mailto:ayhanozdemir80@outlook.com.tr" target="_blank"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i>ayhanozdemir80@outlook.com.tr</a>
 												</li>
 												<li class="nav-item">
 													<a alt="Ayhan Özdemir"
@@ -183,7 +182,7 @@ width:100%;
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="MainPage">
-                                                                                    <img src="images/logo/2.jpeg" class="bglogosticky" alt="site logo" style="width:auto;max-height:70px;"/>  
+                                                                                    <img src="images/logo/2.webp" class="bglogosticky" alt="site logo" style="width:auto;max-height:70px;"/>  
 										</a>
 									</div>
 								</div>
@@ -289,8 +288,19 @@ width:100%;
 				</div>
 			</header>
 			<div role="main" class="main">
-				<section style="margin-bottom: 0px;"class="page-header page-header-sm">
+				<section style="margin-bottom: 0px;<%
+if(Is_Mobile == true)
+{
+%>  
+padding:3%;                                                     
+<%        
+}
+%>"class="page-header page-header-sm">
 					<div class="container">
+<%
+if(Is_Mobile == false)
+{
+%>  
 						<div class="row">
 							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
 								<h1 data-title-border>                              <%
@@ -315,10 +325,9 @@ width:100%;
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %></h1>
-							</div>
+							</div> 
 							<div class="col-md-4 order-1 order-md-2 align-self-center">
 								<ul class="breadcrumb d-block text-md-right">
-                                                                    
 									<li><a href="MainPage"> 
                                                                                                                     <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
@@ -343,7 +352,7 @@ width:100%;
                                                                                                                         }
                                                                                                                     %></a></li>
                                                                         
-									<li style="color:#FFFFFF;"> <%
+									<li><%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
                                                                                                                         {
                                                                                                                     %>
@@ -368,14 +377,48 @@ width:100%;
                                                                                                                     
 								</ul>
 							</div>
-						</div>
+						</div>                                                    
+<%        
+}
+else 
+{
+%>  
+<div class="row">
+							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+								<h1 data-title-border>                              <%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Home
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Hauptseite
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Ana Sayfa
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></h1>
+							</div> 
+						</div>                                                 
+<%
+ }
+%>
 					</div>     
                                 </section>                      
 </head>
 
 <div class="slideshow-container cover"> 
 <img class="mySlides fade cover" src="images/<%    
-    if(request.getHeader("User-Agent").contains("Mobi")) 
+if(request.getHeader("User-Agent").contains("Mobi")) 
 {
 %>
 karosel
@@ -387,10 +430,10 @@ else
 Anasayfa
 <%
 }
-%>/<%=a%>.jpeg" alt="foto"/>
+%>/<%=a%>.webp" alt="foto"/>
 
 <img class="mySlides fade cover"  src="images/<%    
-    if(request.getHeader("User-Agent").contains("Mobi")) 
+if(request.getHeader("User-Agent").contains("Mobi")) 
 {
 %>
 karosel
@@ -402,10 +445,10 @@ else
 Anasayfa
 <%
 }
-%>/<%=b%>.jpeg" alt="foto"/>
+%>/<%=b%>.webp" alt="foto"/>
 
 <img class="mySlides fade cover"  src="images/<%    
-    if(request.getHeader("User-Agent").contains("Mobi")) 
+if(request.getHeader("User-Agent").contains("Mobi")) 
 {
 %>
 karosel
@@ -417,10 +460,10 @@ else
 Anasayfa
 <%
 }
-%>/<%=c%>.jpeg" alt="foto"/>
+%>/<%=c%>.webp" alt="foto"/>
 
 <img class="mySlides fade cover" src="images/<%    
-    if(request.getHeader("User-Agent").contains("Mobi")) 
+if(request.getHeader("User-Agent").contains("Mobi")) 
 {
 %>
 karosel
@@ -432,7 +475,7 @@ else
 Anasayfa
 <%
 }
-%>/<%=d%>.jpeg" alt="foto"/>        
+%>/<%=d%>.webp" alt="foto"/>        
 </div>
 			<footer id="footer" style=" margin-top: 0px; border-top-width: 0px">
 				<div class="footer-copyright">
@@ -483,33 +526,16 @@ text-align: center;
 
 		<!-- Vendor -->
 		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
-		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-		<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>
-		<script src="vendor/popper/umd/popper.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="vendor/common/common.min.js"></script>
-		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
-		<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
 		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
-		<script src="vendor/isotope/jquery.isotope.min.js"></script>
-		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-		<script src="vendor/vide/jquery.vide.min.js"></script>
-		<script src="vendor/vivus/vivus.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
-		
-		<!-- Theme Custom -->
-		<script src="js/custom.js"></script>
                 <script src="js/slide.js"></script>
 		
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
 
-		<!-- Examples -->
-		<script src="js/examples/examples.portfolio.js"></script> 
 </body>                
 </html>

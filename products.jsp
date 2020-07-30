@@ -9,6 +9,11 @@
          session.setAttribute("listbox","TUR");
          Language_Selected = "TUR";
     }
+    Boolean Is_Mobile = false;
+    if(request.getHeader("User-Agent").contains("Mobi")) 
+    {
+    Is_Mobile = true;
+    } 
 %>
 
 		<!-- Basic -->
@@ -17,11 +22,13 @@
 
 		<title>Ayhan Kaplama</title>
 
-		<meta name="keywords" content="HTML5 Template">
-		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="robots" content="all"/>
+		<meta name="keywords" content="Kaplama,Vernik,Vernikleme,Eskitme,Ayhan Kaplama,Eskit,Kapla,Bakır Kaplama"/>
+		<meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
+                <meta name="google-site-verification" content="pJZGbjWp4qXx1iz8XMW4JJIw0VV54AIxQDjKv6YZ2cQ"/>
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/logo/1.jpeg" type="image"/>
+		<link rel="shortcut icon" href="images/logo/1.webp" type="image"/>
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,14 +39,11 @@
 		<!-- Vendor CSS -->
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css"/>
-		<link rel="stylesheet" href="vendor/animate/animate.min.css">
 		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css"/>
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css"/>
 		<link rel="stylesheet" href="css/theme-elements.css"/>
-		<link rel="stylesheet" href="css/theme-blog.css"/>
-		<link rel="stylesheet" href="css/theme-shop.css"/>
 
 		<!-- Skin CSS -->
 		<link rel="stylesheet" href="css/skins/default.css"/> 
@@ -75,19 +79,19 @@
 									<div class="header-row">
 										<nav class="header-nav-top">
 											<ul class="nav nav-pills text-uppercase text-2">
-												 <form action="Language" method="post">
+<form action="Language" method="post">
 <select name="listbox">
 <%
-            if(Language_Selected == null || Language_Selected.equals("ENG"))
+            if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
-                    <option value="ENG" selected>English</option> 
+                     <option value="TUR" selected>Türkçe</option>
 <%
                     }
             else
                     {
 %>
-        <option value="ENG">English</option>
+         <option value="TUR">Türkçe</option>
 <% 
                     }    
 %>    
@@ -106,37 +110,37 @@
                     }    
 %> 
         <% 
-            if(session.getAttribute("listbox").equals("TUR"))
+            if(session.getAttribute("listbox").equals("ENG"))
                     {
 %>   
-                    <option value="TUR" selected>Türkçe</option> 
+                    <option value="ENG" selected>English</option> 
 <%
                     }
             else
                     {
 %>
-        <option value="TUR">Türkçe</option>
+       <option value="ENG">English</option>
 <% 
                     }    
 %> 
     </select>
     <% 
-            if(Language_Selected == null || Language_Selected.equals("ENG"))
+            if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
-                    <input type="submit" name ="button4" value="Select">
+                     <input type="submit" name ="button1" value="Seç">
 <%
                     }
             else if(Language_Selected.equals("GER"))
                     {
 %>
-        <input type="submit" name ="button4" value="Wahlen">
+        <input type="submit" name ="button1" value="Wahlen">
 <% 
                     }    
             else
                     {
 %>
-        <input type="submit" name ="button4" value="Seç">
+        <input type="submit" name ="button1" value="Select">
 <% 
                     }    
 %> 
@@ -150,9 +154,7 @@
 										<nav class="header-nav-top">
 											<ul class="nav nav-pills">
 												<li class="nav-item">
-													<a runat="server" target="iframe2" 
-                                                                                                        href="javascript:window.open('mailto:ayhanozdemir80@outlook.com.tr')"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i>ayhanozdemir80@outlook.com.tr</a>
-                                                                                                        <iframe style="display: none" name="iframe2"></iframe>
+													<a alt="E-Mail" href="mailto:ayhanozdemir80@outlook.com.tr" target="_blank"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i>ayhanozdemir80@outlook.com.tr</a>
 												</li>
 												<li class="nav-item">
 													<a alt="Ayhan Özdemir"
@@ -171,7 +173,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="MainPage">
-                                                                                     <img src="images/logo/2.jpeg" class="bglogosticky" alt="site logo" style="width:auto;max-height:70px;"/>   
+                                                                                     <img src="images/logo/2.webp" class="bglogosticky" alt="site logo" style="width:auto;max-height:70px;"/>   
 										</a>
 									</div>
 								</div>
@@ -275,13 +277,23 @@
                                                 </div>
 				           </div>
 					</div>                                                                                   
-			</header>
-                                                                                                                </div>
-
+			       </header>  
+                        </div>
 			<div role="main" class="main">
-				<section style="margin-bottom: 10px;"class="page-header page-header-sm">
+								<section style="margin-bottom: 10px;<%
+if(Is_Mobile == true)
+{
+%>  
+padding:3%;                                                     
+<%        
+}
+%>"class="page-header page-header-sm">
 					<div class="container">
-						<div class="row">
+						<%
+if(Is_Mobile == false)
+{
+%>  
+<div class="row">
 							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
 								<h1 data-title-border>                              <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
@@ -334,61 +346,95 @@
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Bags
+                                                                                                                            Products
                                                                                                                     <%       
                                                                                                                         }
 
                                                                                                                      else if(Language_Selected.equals("GER"))
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Taschen
+                                                                                                                            Produkte
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Çantalar
+                                                                                                                            Ürünlerimiz
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %></li>
                                                                                                                     
 								</ul>
 							</div>
-						</div>
+						</div>                                                     
+<%        
+}
+else 
+{
+%> 
+<div class="row">
+							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+								<h1 data-title-border>                              <%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Products
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Produkte
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Ürünlerimiz
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></h1>
+							</div>
+						</div>                                                   
+<%
+ }
+%>
 					</div>
 				</section>                                                       
 <div class="row">
-    <div class="column">  
-      <a href="images/kaynak/1.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/1.jpeg" alt="foto" /></a>    
+    <div class="column appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">  
+      <a href="images/kaynak/1.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/1.webp" alt="foto" /></a>    
  
-      <a href="images/alt/1.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/2.jpeg" alt="foto" /></a>
+      <a href="images/alt/1.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/2.webp" alt="foto" /></a>
   
-      <a href="images/alt/3.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/3.jpeg" alt="foto" /></a>  
+      <a href="images/alt/3.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/3.webp" alt="foto" /></a>  
     </div>
       
-    <div class="column">  
-      <a href="images/kaynak/4.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/4.jpeg" alt="foto"/></a>      
+    <div class="column appear-animation-visible"" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">  
+      <a href="images/kaynak/4.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/4.webp" alt="foto"/></a>      
         
-      <a href="images/kaynak/5.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/5.jpeg" alt="foto" /></a>   
+      <a href="images/kaynak/5.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/5.webp" alt="foto" /></a>   
    
-      <a href="images/kaynak/6.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/6.jpeg" alt="foto" /></a>    
+      <a href="images/kaynak/6.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/6.webp" alt="foto" /></a>    
     </div>
     
-    <div class="column">  
-      <a href="images/kaynak/7.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/7.jpeg" alt="foto" /></a>    
+    <div class="column appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">  
+      <a href="images/kaynak/7.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/7.webp" alt="foto" /></a>    
  
-      <a  href="images/kaynak/8.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/8.jpeg" alt="foto" /></a>
+      <a  href="images/kaynak/8.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/8.webp" alt="foto" /></a>
   
-      <a href="images/kaynak/9.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/9.jpeg" alt="foto" /></a>      
+      <a href="images/kaynak/9.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/9.webp" alt="foto" /></a>      
     </div>
     
-    <div class="column">
-        <a href="images/alt/2.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/10.jpeg" alt="foto" /></a> 
+    <div class="column appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
+        <a href="images/alt/2.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/10.webp" alt="foto" /></a> 
         
-        <a href="images/kaynak/11.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/11.jpeg" alt="foto" /></a>
+        <a href="images/kaynak/11.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/11.webp" alt="foto" /></a>
         
-        <a href="images/kaynak/12.jpeg" data-lightbox="a"><img class="img-fluid" src="images/kaynak/12.jpeg" alt="foto" /></a>
+        <a href="images/kaynak/12.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/12.webp" alt="foto" /></a>
     </div>
 </div>      
       
@@ -440,28 +486,13 @@ text-align: center;
 			
 		<!-- Vendor -->
 		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
-		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-		<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>
-		<script src="vendor/popper/umd/popper.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="vendor/common/common.min.js"></script>
-		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
-		<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
 		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
-		<script src="vendor/isotope/jquery.isotope.min.js"></script>
-		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-		<script src="vendor/vide/jquery.vide.min.js"></script>
-		<script src="vendor/vivus/vivus.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
                 <script src="js/lightbox-plus-jquery.js"></script>
-		
-		<!-- Theme Custom -->
-		<script src="js/custom.js"></script>
 		
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
