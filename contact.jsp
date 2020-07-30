@@ -122,8 +122,9 @@
 <% 
                     }    
 %> 
-    </select>
-    <% 
+</select>
+
+<% 
             if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
@@ -143,8 +144,8 @@
 <% 
                     }    
 %> 
-</form>
-</ul>
+</form>                        
+                                                                                        </ul>
 										</nav>
 									</div>
 								</div>
@@ -172,7 +173,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="MainPage">
-                                                                                    <img src="images/logo/2.webp" class="bglogosticky" alt="site logo" style="width:auto;max-height:70px;"/>   
+                                                                                    <img src="images/logo/2.webp" class="bglogosticky" alt="Kaplama" style="width:auto;max-height:70px;"/>   
 										</a>
 									</div>
 								</div>

@@ -27,7 +27,7 @@
                 <meta name="google-site-verification" content="pJZGbjWp4qXx1iz8XMW4JJIw0VV54AIxQDjKv6YZ2cQ"/>
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/logo/1.webp" type="image"/>
+		<link rel="shortcut icon" alt="Ayhan Kaplama" href="images/logo/1.webp" type="image"/>
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
@@ -55,14 +55,7 @@
                 <link rel="stylesheet" href="css/custom.css"/>
 
 		<!-- Head Libs -->
-		<script src="vendor/modernizr/modernizr.min.js"></script>
-                
-<style>
-.owl-dot-active
-{
-    background-color: #212529;
-}
-</style>                                
+		<script src="vendor/modernizr/modernizr.min.js"></script>                               
 
 	</head>
 	<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
@@ -128,8 +121,9 @@
 <% 
                     }    
 %> 
-    </select>
-    <% 
+</select>
+
+<% 
             if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   

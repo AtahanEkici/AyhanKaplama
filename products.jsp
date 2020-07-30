@@ -123,8 +123,9 @@
 <% 
                     }    
 %> 
-    </select>
-    <% 
+</select>
+
+<% 
             if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
@@ -173,7 +174,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="MainPage">
-                                                                                     <img src="images/logo/2.webp" class="bglogosticky" alt="site logo" style="width:auto;max-height:70px;"/>   
+                                                                                     <img src="images/logo/2.webp" class="bglogosticky" alt="Ayhan Kaplama" style="width:auto;max-height:70px;"/>   
 										</a>
 									</div>
 								</div>
@@ -406,35 +407,35 @@ else
 				</section>                                                       
 <div class="row">
     <div class="column appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">  
-      <a href="images/kaynak/1.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/1.webp" alt="foto" /></a>    
+      <a href="images/kaynak/1.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/1.webp" alt="Kaplama" /></a>    
  
-      <a href="images/alt/1.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/2.webp" alt="foto" /></a>
+      <a href="images/alt/1.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/2.webp" alt="Bakır Kaplama" /></a>
   
-      <a href="images/alt/3.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/3.webp" alt="foto" /></a>  
+      <a href="images/alt/3.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/3.webp" alt="Vernikleme" /></a>  
     </div>
       
     <div class="column appear-animation-visible"" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">  
-      <a href="images/kaynak/4.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/4.webp" alt="foto"/></a>      
+      <a href="images/kaynak/4.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/4.webp" alt="Kaplama"/></a>      
         
-      <a href="images/kaynak/5.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/5.webp" alt="foto" /></a>   
+      <a href="images/kaynak/5.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/5.webp" alt="Eskitme" /></a>   
    
-      <a href="images/kaynak/6.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/6.webp" alt="foto" /></a>    
+      <a href="images/kaynak/6.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/6.webp" alt="Vernikleme" /></a>    
     </div>
     
     <div class="column appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">  
-      <a href="images/kaynak/7.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/7.webp" alt="foto" /></a>    
+      <a href="images/kaynak/7.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/7.webp" alt="Kaplama" /></a>    
  
-      <a  href="images/kaynak/8.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/8.webp" alt="foto" /></a>
+      <a  href="images/kaynak/8.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/8.webp" alt="Eskitme" /></a>
   
-      <a href="images/kaynak/9.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/9.webp" alt="foto" /></a>      
+      <a href="images/kaynak/9.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/9.webp" alt="Bakır Kaplama" /></a>      
     </div>
     
     <div class="column appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
-        <a href="images/alt/2.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/10.webp" alt="foto" /></a> 
+        <a href="images/alt/2.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/10.webp" alt="Kaplama" /></a> 
         
-        <a href="images/kaynak/11.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/11.webp" alt="foto" /></a>
+        <a href="images/kaynak/11.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/11.webp" alt="Vernikleme" /></a>
         
-        <a href="images/kaynak/12.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/12.webp" alt="foto" /></a>
+        <a href="images/kaynak/12.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/12.webp" alt="Eskitme" /></a>
     </div>
 </div>      
       

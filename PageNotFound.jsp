@@ -29,9 +29,8 @@
 		<meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
                 <meta name="google-site-verification" content="pJZGbjWp4qXx1iz8XMW4JJIw0VV54AIxQDjKv6YZ2cQ"/>
                 
-	
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/logo/1.webp" type="image"/>
+		<link rel="shortcut icon" alt="Ayhan Kaplama" href="images/logo/1.webp" type="image"/>
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,15 +42,13 @@
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css"/>
 		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css"/>
+                
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css"/>
 		<link rel="stylesheet" href="css/theme-elements.css"/>
 
 		<!-- Skin CSS -->
 		<link rel="stylesheet" href="css/skins/default.css"/> 
-
-		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="css/custom.css"/>
 
 		<!-- Head Libs -->
 		<script src="vendor/modernizr/modernizr.min.js"></script>
@@ -121,8 +118,9 @@
 <% 
                     }    
 %> 
-    </select>
-    <% 
+</select>
+
+<% 
             if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>Language</servlet-name>
+        <servlet-class>Language</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Language</servlet-name>
+        <url-pattern>/Language</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/PageNotFound.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/PageNotFound.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/PageNotFound.jsp</location>
+    </error-page>
+ 
+<servlet>   
+  <servlet-name>MainPage</servlet-name>
+  <jsp-file>/index.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>MainPage</servlet-name>
+  <url-pattern>/MainPage</url-pattern>
+</servlet-mapping>
+ 
+ <servlet>   
+  <servlet-name>services</servlet-name>
+  <jsp-file>/services.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>services</servlet-name>
+  <url-pattern>/services</url-pattern>
+</servlet-mapping>
+ 
+    <servlet>   
+  <servlet-name>PageNotFound</servlet-name>
+  <jsp-file>/PageNotFound.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>PageNotFound</servlet-name>
+  <url-pattern>/PageNotFound</url-pattern>
+</servlet-mapping>
+<servlet>   
+  <servlet-name>about-us</servlet-name>
+  <jsp-file>/about-us.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>about-us</servlet-name>
+  <url-pattern>/about-us</url-pattern>
+</servlet-mapping>
+<servlet>   
+  <servlet-name>contact</servlet-name>
+  <jsp-file>/contact.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>contact</servlet-name>
+  <url-pattern>/contact</url-pattern>
+</servlet-mapping>
+<servlet>   
+  <servlet-name>products-bags</servlet-name>
+  <jsp-file>/products-bags.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>products-bags</servlet-name>
+  <url-pattern>/products-bags</url-pattern>
+</servlet-mapping>
+
+<servlet>   
+  <servlet-name>products-dresses</servlet-name>
+  <jsp-file>/products-dresses.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>products-dresses</servlet-name>
+  <url-pattern>/products-dresses</url-pattern>
+</servlet-mapping>
+<servlet>   
+  <servlet-name>products</servlet-name>
+  <jsp-file>/products.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>products</servlet-name>
+  <url-pattern>/products</url-pattern>
+</servlet-mapping>
+</web-app>
