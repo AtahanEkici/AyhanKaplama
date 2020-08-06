@@ -4297,7 +4297,7 @@ window.theme.fn = {
 						self.$wrapper.find('.dropdown, .dropdown-submenu').removeClass('dropdown-reverse');
 
 						self.$wrapper.find('.dropdown:not(.manual):not(.dropdown-mega), .dropdown-submenu:not(.manual)').each(function() {
-							if(!$(this).find('.dropdown-menu').isvisible( false, true, 'horizontal' )  ) {
+							if(!$(this).find('.dropdown-menu').visible( false, true, 'horizontal' )  ) {
 								$(this).addClass('dropdown-reverse');
 							}
 						});
