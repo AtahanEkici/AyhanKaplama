@@ -9,6 +9,11 @@
          session.setAttribute("listbox","TUR");
          Language_Selected = "TUR";
     }
+    Boolean Is_Mobile = false;
+    if(request.getHeader("User-Agent").contains("Mobi")) 
+    {
+    Is_Mobile = true;
+    }
 %>                   
 		<!-- Basic -->
 		<meta charset="utf-8">

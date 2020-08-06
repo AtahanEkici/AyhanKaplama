@@ -50,9 +50,7 @@
                 <%
                 if(Is_Mobile == true)
                 {
-                %> 
-                
-
+                %>  
                 <!-- Vendor CSS -->
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css"/>
@@ -279,7 +277,7 @@ width:100%;
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            İletişim Bilgileri
+                                                                                                                            İLETİŞİM BİLGİLERİ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %>
@@ -302,11 +300,37 @@ width:100%;
 				</div>
 			</header>
 			<div role="main" class="main">
-				<section style="margin-bottom: 0px;padding:3%; "class="page-header page-header-sm">
+				<section style="margin-bottom:0px;padding:3%;" class="page-header page-header-sm">
 					<div class="container">
+						<div class="row">
+							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+								<h1 data-title-border>                              <%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Home
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Hauptseite
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Ana Sayfa
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></h1>
+							</div> 
+						</div>                                                    
 
 					</div>     
-                                </section>                      
+                                </section>                    
 </head>
 
 <div class="slideshow-container cover"> 
@@ -632,7 +656,7 @@ width:100%;
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Ürünlerimiz
+                                                                                                                            ÜRÜNLERİMİZ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %>        
@@ -658,7 +682,7 @@ width:100%;
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Hakkımızda
+                                                                                                                            HAKKIMIZDA
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %>
@@ -684,7 +708,7 @@ width:100%;
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            İletişim Bilgileri
+                                                                                                                            İLETİŞİM BİLGİLERİ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %>
@@ -707,7 +731,7 @@ width:100%;
 				</div>
 			</header>
 			<div role="main" class="main">
-				<section style="margin-bottom:0px; "class="page-header page-header-sm">
+				<section style="margin-bottom:0px;" class="page-header page-header-sm">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
@@ -922,14 +946,12 @@ text-align: center;
 			</footer>
                   </div>
                 </div>
-
                  
                 <!-- Vendor -->
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		
-		
+
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
                 <script src="js/slide.js"></script>
