@@ -10,30 +10,47 @@
     {
          session.setAttribute("listbox","TUR");
          Language_Selected = "TUR";
-    }
-    Boolean Is_Mobile = false;
+    } 
+Boolean Is_Mobile = false;
     if(request.getHeader("User-Agent").contains("Mobi")) 
     {
     Is_Mobile = true;
-    } 
+    }
 %>
 
 		<!-- Basic -->
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>Hata!</title>
+		<title><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("TR"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Hata
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Error
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %>!</title>
 
-		<meta name="robots" content="all"/>
+		<meta name="robots" content="index,follow"/>
+                <meta name="rating" content="general">
+                <meta name="copyright" content="All Rights Reserved.">
+                <meta name="publisher" content="">
 		<meta name="keywords" content="Kaplama,Vernik,Vernikleme,Eskitme,Ayhan Kaplama,Eskit,Kapla,Bakır Kaplama"/>
-		<meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
+		<meta name="author" content="Atahan Ekici">
+                <meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
                 <meta name="google-site-verification" content="pJZGbjWp4qXx1iz8XMW4JJIw0VV54AIxQDjKv6YZ2cQ"/>
                 
 		<!-- Favicon -->
-		<link rel="shortcut icon" alt="Ayhan Kaplama" href="images/logo/1.webp" type="image"/>
+		<link rel="shortcut icon" href="images/logo/1.webp" type="image/x-icon"/>
 
 		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+	        <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 		<!-- Web Fonts  -->
 		<link rel="stylesheet" href="css/fonts.css" type="text/css"/>
@@ -42,6 +59,7 @@
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css"/>
 		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css"/>
+                <link rel="stylesheet" href="vendor/animate/animate.min.css"/>
                 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css"/>
@@ -56,7 +74,7 @@
               
 </head>
 
-	<body class="loading-overlay-showing" style="width: 100%" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+	<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
             <div class="loading-overlay">
 			<div class="bounce-loader">
 				<div class="bounce1"></div>
@@ -182,7 +200,7 @@
 												<ul class="nav nav-pills" id="mainNav">
                                                                                                                 <li class="dropdown">
 														<a class="dropdown-item" href="MainPage">
-															 <%
+													            <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
                                                                                                                         {
                                                                                                                     %>
@@ -252,7 +270,7 @@
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            İletişim Bilgileri
+                                                                                                                            İLETİŞİM BİLGİLERİ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %>
@@ -286,7 +304,7 @@ padding:3%;
 					<div class="container">
 						<div class="row">
 							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
-								<h1 data-title-border>                              <%
+								<h1 class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="150" data-title-border>                              <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
                                                                                                                         {
                                                                                                                     %>
@@ -313,9 +331,9 @@ padding:3%;
 					</div>     
                                 </section>   
                                                                                                                     <h2 align="center">
-                                                                                                                        <div style="margin:5%;">
+                                                                                                                        <div class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="150" style="margin:5%;">
                                                                                                                         <div style="margin:5%;">   
-                                                                                                                        <strong>404</strong>
+                                                                                                                        <strong style="font-size:100px;">404</strong>
                                                                                                                         </div> 
                                                                                                                     <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
@@ -341,7 +359,7 @@ padding:3%;
                                                                                                                     %>
                                                                                                                         </div>
                                                                                                                         
-                                                                                                                        <div style="margin:5%">
+                                                                                                                        <div class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="150" style="margin:5%">
                                                                                                                             <a href="MainPage" align="center" style="color:#212529;"> 
                                                                                                                     <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
@@ -412,9 +430,8 @@ padding:3%;
 
 		<!-- Vendor -->
 		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="vendor/common/common.min.js"></script>
-		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>

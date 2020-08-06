@@ -9,11 +9,6 @@
          session.setAttribute("listbox","TUR");
          Language_Selected = "TUR";
     }
-    Boolean Is_Mobile = false;
-    if(request.getHeader("User-Agent").contains("Mobi")) 
-    {
-    Is_Mobile = true;
-    } 
 %>                   
 		<!-- Basic -->
 		<meta charset="utf-8">
@@ -21,27 +16,30 @@
 
 		<title>Ayhan Kaplama</title>
 
-		<meta name="robots" content="all"/>
+		<meta name="robots" content="index,follow"/>
+                <meta name="rating" content="general">
+                <meta name="copyright" content="All Rights Reserved.">
+                <meta name="publisher" content="">
 		<meta name="keywords" content="Kaplama,Vernik,Vernikleme,Eskitme,Ayhan Kaplama,Eskit,Kapla,Bakır Kaplama"/>
-		<meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
+		<meta name="author" content="Atahan Ekici">
+                <meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
                 <meta name="google-site-verification" content="pJZGbjWp4qXx1iz8XMW4JJIw0VV54AIxQDjKv6YZ2cQ"/>
-
 		<!-- Favicon -->
-		<link rel="shortcut icon" alt="Ayhan Kaplama" href="images/logo/1.webp" type="image"/>
+		<link rel="shortcut icon" href="images/logo/1.webp" type="image/x-icon"/>
 
 		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 		<!-- Web Fonts  -->
 		<link rel="stylesheet" href="css/fonts.css" type="text/css"/>
 
 		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
-		<link rel="stylesheet" href="vendor/animate/animate.min.css">
-		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
-		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
-		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css"/>
+		<link rel="stylesheet" href="vendor/animate/animate.min.css"/>
+		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css"/>
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css"/>
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css"/>
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css"/>
@@ -127,19 +125,19 @@
             if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
-                     <input type="submit" name ="button1" value="Seç">
+                     <input type="submit" name ="button3" value="Seç">
 <%
                     }
             else if(Language_Selected.equals("GER"))
                     {
 %>
-        <input type="submit" name ="button1" value="Wahlen">
+        <input type="submit" name ="button3" value="Wahlen">
 <% 
                     }    
             else
                     {
 %>
-        <input type="submit" name ="button1" value="Select">
+        <input type="submit" name ="button3" value="Select">
 <% 
                     }    
 %> 
@@ -230,7 +228,7 @@
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Ürünlerimiz
+                                                                                                                            ÜRÜNLERİMİZ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %>        
@@ -257,7 +255,7 @@
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            İletişim Bilgileri
+                                                                                                                            İLETİŞİM BİLGİLERİ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %>
@@ -498,10 +496,10 @@ else
                                                     
 							<div class="col-md-8 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1250" align="left">
                                                             <div class="owl-carousel owl-theme nav-inside mb-0" data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}">
-                                                               <img class="img-fluid" src="images/Anasayfa/1.webp" alt="foto"/>
+                                                               <img class="img-fluid" src="images/Anasayfa/4.webp" alt="foto"/>
                                                                <img class="img-fluid" src="images/Anasayfa/2.webp" alt="foto"/> 
                                                                <img class="img-fluid" src="images/Anasayfa/3.webp" alt="foto"/> 
-                                                               <img class="img-fluid" src="images/Anasayfa/4.webp" alt="foto"/>
+                                                               <img class="img-fluid" src="images/Anasayfa/1.webp" alt="foto"/>
 								</div>
 							</div>
 						</div>
@@ -553,14 +551,12 @@ else
                                                        
 			</footer>
 		</div>
-        
-
+                                                        
 		<!-- Vendor -->
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="vendor/common/common.min.js"></script>
-		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
 		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
@@ -568,8 +564,5 @@ else
 		
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
-
-		<!-- Examples -->
-		<script src="js/examples/examples.portfolio.js"></script>
 </html>
 </bod

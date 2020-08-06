@@ -14,7 +14,7 @@
     if(request.getHeader("User-Agent").contains("Mobi")) 
     {
     Is_Mobile = true;
-    } 
+    }
 %>
            
 		<!-- Basic -->
@@ -23,17 +23,19 @@
 
 		<title>Ayhan Kaplama</title>
                 
-                <meta name="robots" content="all"/>
+                <meta name="robots" content="index,follow"/>
+                <meta name="rating" content="general">
+                <meta name="copyright" content="All Rights Reserved.">
+                <meta name="publisher" content="">
 		<meta name="keywords" content="Kaplama,Vernik,Vernikleme,Eskitme,Ayhan Kaplama,Eskit,Kapla,Bakır Kaplama"/>
-		<meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
+		<meta name="author" content="Atahan Ekici">
+                <meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
                 <meta name="google-site-verification" content="pJZGbjWp4qXx1iz8XMW4JJIw0VV54AIxQDjKv6YZ2cQ"/>
-                
-
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/logo/1.webp" type="image"/>
+		<link rel="shortcut icon" href="images/logo/1.webp" type="image/x-icon"/>
 
 		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 		<!-- Web Fonts  -->
 		<link rel="stylesheet" href="css/fonts.css" type="text/css"/>
@@ -47,8 +49,6 @@
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css"/>
 		<link rel="stylesheet" href="css/theme-elements.css"/>
-		<link rel="stylesheet" href="css/theme-blog.css"/>
-		<link rel="stylesheet" href="css/theme-shop.css"/>
                     
 		<!-- Skin CSS -->
 		<link rel="stylesheet" href="css/skins/default.css"/> 
@@ -128,19 +128,19 @@
             if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
-                     <input type="submit" name ="button1" value="Seç">
+                     <input type="submit" name ="button2" value="Seç"/>
 <%
                     }
             else if(Language_Selected.equals("GER"))
                     {
 %>
-        <input type="submit" name ="button1" value="Wahlen">
+        <input type="submit" name ="button2" value="Wahlen"/>
 <% 
                     }    
             else
                     {
 %>
-        <input type="submit" name ="button1" value="Select">
+        <input type="submit" name ="button2" value="Select"/>
 <% 
                     }    
 %> 
@@ -231,7 +231,7 @@
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Ürünlerimiz
+                                                                                                                            ÜRÜNLERİMİZ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %>        
@@ -314,7 +314,7 @@ if(Is_Mobile == false)
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            İletişim Bilgileri
+                                                                                                                            İLETİŞİM BİLGİLERİ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %></h1>
@@ -343,7 +343,7 @@ if(Is_Mobile == false)
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %></a></li>
-									<li class="active" style="color:#FFFFFF;"><%
+									<li class="active"><%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
                                                                                                                         {
                                                                                                                     %>
@@ -361,7 +361,7 @@ if(Is_Mobile == false)
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            İletişim Bilgileri
+                                                                                                                            İLETİŞİM BİLGİLERİ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %></li>
@@ -394,7 +394,7 @@ else
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            İletişim Bilgileri
+                                                                                                                            İLETİŞİM BİLGİLERİ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %></h1>
@@ -413,25 +413,47 @@ else
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Address
+                                                                                                                    <p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"><a style="color:#212529" href="https://www.google.com/maps?q=41.0892993,28.8907088&z=17&hl=tr" target="_blank">Adress :</a></p>
                                                                                                                     <%       
                                                                                                                         }
 
                                                                                                                      else if(Language_Selected.equals("GER"))
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Adresse
+                                                                                                                    <p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"><a style="color:#212529" href="https://www.google.com/maps?q=41.0892993,28.8907088&z=17&hl=ger" target="_blank">Adresse :</a></p>
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Adres
+                                                                                                                    <p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"><a style="color:#212529" href="https://www.google.com/maps?q=41.0892993,28.8907088&z=17&hl=tr" target="_blank">Adres :</a></p>
                                                                                                                     <%       
                                                                                                                         }
-                                                                                                                    %>  : </h4>
-                                                                                                                    <p class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300"> Karayolları 
+                                                                                                                    %>
+                                                                                                                   </h4><p class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300"> 
+                                                                                                                        <%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                           Karayollari
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Karayollari
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Karayolları
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %> 
                                                                                                                     
                                                                                                                     <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
@@ -535,8 +557,29 @@ else
 								</div>
                                                                 <div>
 									<div>
-                                                                            <h4 class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"><a style="color:#212529" href="https://www.google.com/maps?q=41.0892993,28.8907088&z=17&hl=tr" target="_blank">Google Maps : </a></h4>
-<iframe class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.070818658033!2d28.888520115416505!3d41.08929927929268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDA1JzIxLjUiTiAyOMKwNTMnMjYuNiJF!5e0!3m2!1str!2str!4v1596031705517!5m2!1str!2str" style="max-width:100%;height:auto;" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>									</div>
+                                                                                                                    <%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <h4 class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"><a style="color:#212529" href="https://www.google.com/maps?q=41.0892993,28.8907088&z=17&hl=en" target="_blank">Google Maps : </a></h4>
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <h4 class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"><a style="color:#212529" href="https://www.google.com/maps?q=41.0892993,28.8907088&z=17&hl=ger" target="_blank">Google Maps : </a></h4>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <h4 class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"><a style="color:#212529" href="https://www.google.com/maps?q=41.0892993,28.8907088&z=17&hl=tr" target="_blank">Google Maps : </a></h4>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %> 
+                                                                                                                    <iframe class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.070818658033!2d28.888520115416505!3d41.08929927929268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDA1JzIxLjUiTiAyOMKwNTMnMjYuNiJF!5e0!3m2!1str!2str!4v1596031705517!5m2!1str!2str" style="max-width:100%;height:auto;" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>									</div>
 								</div>
 				</div>
 			</div>
@@ -591,8 +634,6 @@ else
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="vendor/common/common.min.js"></script>
-		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>

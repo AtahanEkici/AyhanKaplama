@@ -13,7 +13,10 @@
     if(request.getHeader("User-Agent").contains("Mobi")) 
     {
     Is_Mobile = true;
-    } 
+    }
+    String TR = "Resim: %1 - %2";
+    String GER = "Bild: %1 von %2";
+    String ENG = "Image: %1 of %2";
 %>
 
 		<!-- Basic -->
@@ -22,16 +25,20 @@
 
 		<title>Ayhan Kaplama</title>
 
-		<meta name="robots" content="all"/>
+		<meta name="robots" content="index,follow"/>
+                <meta name="rating" content="general">
+                <meta name="copyright" content="All Rights Reserved.">
+                <meta name="publisher" content="">
 		<meta name="keywords" content="Kaplama,Vernik,Vernikleme,Eskitme,Ayhan Kaplama,Eskit,Kapla,Bakır Kaplama"/>
-		<meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
+		<meta name="author" content="Atahan Ekici">
+                <meta name="description" content="Ayhan Kaplama: Bakır Kaplama , vernikleme ve eskitme işlemleri yapılır."/>
                 <meta name="google-site-verification" content="pJZGbjWp4qXx1iz8XMW4JJIw0VV54AIxQDjKv6YZ2cQ"/>
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/logo/1.webp" type="image"/>
+		<link rel="shortcut icon" href="images/logo/1.webp" type="image/x-icon"/>
 
 		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 		<!-- Web Fonts  -->
 		<link rel="stylesheet" href="css/fonts.css" type="text/css"/>
@@ -40,6 +47,7 @@
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css"/>
 		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css"/>
+                <link rel="stylesheet" href="vendor/animate/animate.min.css"/>
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css"/>
@@ -129,19 +137,19 @@
             if(Language_Selected == null || Language_Selected.equals("TUR"))
                     {
 %>   
-                     <input type="submit" name ="button1" value="Seç">
+                     <input type="submit" name ="button4" value="Seç">
 <%
                     }
             else if(Language_Selected.equals("GER"))
                     {
 %>
-        <input type="submit" name ="button1" value="Wahlen">
+        <input type="submit" name ="button4" value="Wahlen">
 <% 
                     }    
             else
                     {
 %>
-        <input type="submit" name ="button1" value="Select">
+        <input type="submit" name ="button4" value="Select">
 <% 
                     }    
 %> 
@@ -187,7 +195,7 @@
 												<ul class="nav nav-pills" id="mainNav">
                                                                                                                 <li class="dropdown">
 														<a class="dropdown-item" href="MainPage">
-															 <%
+													            <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))
                                                                                                                         {
                                                                                                                     %>
@@ -257,7 +265,7 @@
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            İletişim Bilgileri
+                                                                                                                            İLETİŞİM BİLGİLERİ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %>
@@ -314,7 +322,7 @@ if(Is_Mobile == false)
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Ürünlerimiz
+                                                                                                                            ÜRÜNLERİMİZ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %></h1>
@@ -361,7 +369,7 @@ if(Is_Mobile == false)
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Ürünlerimiz
+                                                                                                                            ÜRÜNLERİMİZ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %></li>
@@ -394,7 +402,7 @@ else
                                                                                                                     else
                                                                                                                         {
                                                                                                                     %>
-                                                                                                                            Ürünlerimiz
+                                                                                                                            ÜRÜNLERİMİZ
                                                                                                                     <%       
                                                                                                                         }
                                                                                                                     %></h1>
@@ -406,36 +414,36 @@ else
 					</div>
 				</section>                                                       
 <div class="row">
-    <div class="column appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">  
-      <a href="images/kaynak/1.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/1.webp" alt="Kaplama" /></a>    
+    <div class="column">  
+      <a href="images/kaynak/1.webp" data-lightbox="a"><img class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/1.webp" alt="Kaplama" /></a>    
  
-      <a href="images/alt/1.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/2.webp" alt="Bakır Kaplama" /></a>
+      <a href="images/alt/1.webp" data-lightbox="a"><img class="appear-animation lazyload" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/2.webp" alt="Bakır Kaplama" /></a>
   
-      <a href="images/alt/3.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/3.webp" alt="Vernikleme" /></a>  
+      <a href="images/alt/3.webp" data-lightbox="a"><img class="appear-animation lazyload" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/3.webp" alt="Vernikleme" /></a>  
     </div>
       
-    <div class="column appear-animation-visible"" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">  
-      <a href="images/kaynak/4.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/4.webp" alt="Kaplama"/></a>      
+    <div class="column">    
+      <a href="images/kaynak/4.webp" data-lightbox="a"><img class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/4.webp" alt="Kaplama"/></a>      
         
-      <a href="images/kaynak/5.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/5.webp" alt="Eskitme" /></a>   
+      <a href="images/kaynak/5.webp" data-lightbox="a"><img class="appear-animation lazyload" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/5.webp" alt="Eskitme" /></a>   
    
-      <a href="images/kaynak/6.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/6.webp" alt="Vernikleme" /></a>    
+      <a href="images/kaynak/6.webp" data-lightbox="a"><img class="appear-animation lazyload" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/6.webp" alt="Vernikleme" /></a>    
     </div>
     
-    <div class="column appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">  
-      <a href="images/kaynak/7.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/7.webp" alt="Kaplama" /></a>    
+    <div class="column">   
+      <a href="images/kaynak/7.webp" data-lightbox="a"><img class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/7.webp" alt="Kaplama" /></a>    
  
-      <a  href="images/kaynak/8.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/8.webp" alt="Eskitme" /></a>
+      <a  href="images/kaynak/8.webp" data-lightbox="a"><img class="appear-animation lazyload" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/8.webp" alt="Eskitme" /></a>
   
-      <a href="images/kaynak/9.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/9.webp" alt="Bakır Kaplama" /></a>      
+      <a href="images/kaynak/9.webp" data-lightbox="a"><img class="appear-animation lazyload" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/9.webp" alt="Bakır Kaplama" /></a>      
     </div>
     
-    <div class="column appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
-        <a href="images/alt/2.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/10.webp" alt="Kaplama" /></a> 
+    <div class="column">  
+        <a href="images/alt/2.webp" data-lightbox="a"><img class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/10.webp" alt="Kaplama" /></a> 
         
-        <a href="images/kaynak/11.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/11.webp" alt="Vernikleme" /></a>
+        <a href="images/kaynak/11.webp" data-lightbox="a"><img class="appear-animation lazyload" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/11.webp" alt="Vernikleme" /></a>
         
-        <a href="images/kaynak/12.webp" data-lightbox="a"><img class="img-fluid" src="images/kaynak/12.webp" alt="Eskitme" /></a>
+        <a href="images/kaynak/12.webp" data-lightbox="a"><img class="appear-animation lazyload" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" src="images/kaynak/12.webp" alt="Eskitme" /></a>
     </div>
 </div>      
       
@@ -487,18 +495,38 @@ text-align: center;
 			
 		<!-- Vendor -->
 		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="vendor/common/common.min.js"></script>
-		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
-                <script src="js/lightbox-plus-jquery.js"></script>
+                <script src="js/lightbox.js"></script>
 		
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
+                <script src="js/jquery.lazyload.min.js"></script>
 
-                
+<%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+ <script>
+lightbox.option
+({
+      'resizeDuration': 300,
+      'wrapAround': true,
+      'fadeDuration': 500,
+      'alwaysShowNavOnTouchDevices': true,
+      'disableScrolling': true,
+      'albumLabel': "<%=ENG%>"
+});
+</script>
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
 <script>
 lightbox.option
 ({
@@ -506,8 +534,29 @@ lightbox.option
       'wrapAround': true,
       'fadeDuration': 500,
       'alwaysShowNavOnTouchDevices': true,
-      'disableScrolling': true
-})
+      'disableScrolling': true,
+      'albumLabel': "<%=GER%>"
+});
 </script>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+<script>
+lightbox.option
+({
+      'resizeDuration': 300,
+      'wrapAround': true,
+      'fadeDuration': 500,
+      'alwaysShowNavOnTouchDevices': true,
+      'disableScrolling': true,
+      'albumLabel': "<%=TR%>"
+});
+</script>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %>
 </body>
 </html>
