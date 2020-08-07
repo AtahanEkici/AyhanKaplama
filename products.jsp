@@ -500,11 +500,11 @@ text-align: center;
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
-                <script src="js/lightbox.js"></script>
+                <script src="js/lightbox.min.js"></script>
 		
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
-                <script src="js/jquery.lazyload.min.js"></script>
+                <script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
 
 <%
                                                                                                                         if(Language_Selected == null || Language_Selected.equals("ENG"))

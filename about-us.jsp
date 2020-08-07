@@ -561,7 +561,6 @@ else
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="vendor/common/common.min.js"></script>
 		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->

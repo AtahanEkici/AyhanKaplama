@@ -1,4 +1,3 @@
-<%@page import="Random.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List;"%>
 <!DOCTYPE html>
@@ -11,11 +10,6 @@
          session.setAttribute("listbox","TUR");
          Language_Selected = "TUR";
     }
-    List slider = Randomizer.CodeGenerator(4);
-    Object a = slider.get(0);
-    Object b = slider.get(1);
-    Object c = slider.get(2);
-    Object d = slider.get(3);
     Boolean Is_Mobile = false;
     if(request.getHeader("User-Agent").contains("Mobi")) 
     {
@@ -46,6 +40,9 @@
 
 		<!-- Web Fonts  -->
 		<link rel="stylesheet" href="css/fonts.css" type="text/css"/>
+                
+                <!-- Head Libs -->
+		<script src="vendor/modernizr/modernizr.min.js"></script>
 	
                 <%
                 if(Is_Mobile == true)
@@ -54,7 +51,9 @@
                 <!-- Vendor CSS -->
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css"/>
-		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css"/>        
+		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css"/>  
+                <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css"/>
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css"/>
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css"/>
@@ -62,12 +61,6 @@
                 
 		<!-- Skin CSS -->
 		<link rel="stylesheet" href="css/skins/default.css"/> 
-                
-                <!-- Added CSS -->
-                <link rel="stylesheet" href="css/slide.css"/>
-                
-                <!-- Head Libs -->
-		<script src="vendor/modernizr/modernizr.min.js"></script>
                 
                 <!-- LightBox CSS -->
                 <link rel="stylesheet" href="css/lightbox.css"/>
@@ -333,14 +326,15 @@ width:100%;
                                 </section>                    
 </head>
 
-<div class="slideshow-container cover"> 
-<img class="mySlides fade cover" src="images/karosel/<%=a%>.webp" alt="foto"/>
+<div class="owl-carousel owl-theme nav-inside" data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}">
+    
+<img class="img-fluid" src="images/karosel/1.webp" alt="foto1"/>
 
-<img class="mySlides fade cover lazyload"  src="images/karosel/<%=b%>.webp" alt="foto"/>
+<img class="img-fluid"  src="images/karosel/2.webp" alt="foto2"/>
 
-<img class="mySlides fade cover lazyload"  src="images/karosel/<%=c%>.webp"  alt="foto"/>
+<img class="img-fluid"  src="images/karosel/3.webp"  alt="foto3"/>
 
-<img class="mySlides fade cover lazyload" src="images/karosel/<%=d%>.webp"  alt="foto"/>        
+<img class="img-fluid " src="images/karosel/4.webp"  alt="foto4"/>        
 </div>
 
 <div>
@@ -350,58 +344,296 @@ width:100%;
 <div class="container" style="margin-bottom:10px;width:100%">                                                        
 <div class="row" style="margin-top:10px;margin-bottom:30px;">
 <div class="col" style="text-align:center">
-        <a  class="btn" id="btn1" data-target="Kaplama" style="color:white;background-color:#0088CC;">Kaplama</a>
+        <a  class="btn" id="btn1" data-target="Kaplama" style="color:white;background-color:#0088CC;"> <%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Coating
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Glasur
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Kaplama
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></a>
 </div>
 <div class="col" style="text-align:center;width:100%">        
-        <a  class="btn" id="btn2" data-target="Vernikleme" style="color:white;background-color:#0088CC;">Vernikleme</a>
+        <a  class="btn" id="btn2" data-target="Vernikleme" style="color:white;background-color:#0088CC;"><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Lacquering
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Lackierung
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Vernikleme
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></a>
 </div>
 <div class="col" style="text-align:center;width:100%">
-        <a  class="btn" id="btn3" data-target="Eskitme" style="color:white;background-color:#0088CC;">Eskitme</a>
+        <a  class="btn" id="btn3" data-target="Eskitme" style="color:white;background-color:#0088CC;"><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Accelerated Ageing
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Beschleunigtes Altern
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Eskitme
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></a>
 </div>
 </div>
 
                                                                                                               
 <div id="content" class="col">
 <div class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" id="Kaplama" style="display:table-cell;width:100%">
-        <h4 style="color:#212529;text-align:left;margin-bottom:20px;"><strong>Bakır Kaplama</strong></h4>
+        <h4 style="color:#212529;text-align:left;margin-bottom:20px;"><strong><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Copper Plating
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Verkupferung
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Bakır Kaplama
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></strong></h4>
         <a href="images/kaynak/4.webp" data-lightbox="a"><img src="images/kaynak/4.webp" alt="Kaplama" style="max-width:35%;" align="left"/></a>
+        <%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
 <strong>       
 <p style="text-align: center;color: black;" style="max-width:35%;color:black">
-&#8658; Birçok yüzeye kaplanabilir.
+&#8658; It can be easily reshaped.
 </p>
 </strong>
         
 <strong>        
 <p style="text-align: center;color: black;" style="max-width:35%;color:black">
-&#8658; Üstün elektrik ve ısı iletkenliği vardır.
+&#8658; It can be coated to different surfaces.
 </p>
 </strong>      
-</div>
+                                                                                                                    <%       
+                                                                                                                        }
 
-    
-<div class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" id="Vernikleme" style="display:table-cell;text-align:center;width:100%">
-        <h4 style="color:#212529;margin-bottom:20px;"><strong>Vernikleme</strong></h4> 
-        <a  style="max-width:35%;" href="images/alt/3.webp" data-lightbox="b"><img class="lazyload" src="images/kaynak/3.webp" alt="Vernikleme" style="max-width:35%;display:inline-block;"/></a>
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
 <strong>       
-<p style="text-align:center;color: black;" style="max-width:25%;color:black">
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; Es kann leicht umgeformt werden.
+</p>
+</strong>
+        
+<strong>        
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; Es kann auf verschiedene Oberflächen aufgetragen werden.
+</p>
+</strong>      
+
+
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+<strong>       
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; İyi dövülebilir.
+</p>
+</strong>
+        
+<strong>        
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; Birçok yüzeye kaplanabilir.
+</p>
+</strong>      
+
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %> 
+ 
+<div class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" id="Vernikleme" style="display:table-cell;text-align:center;width:100%">
+        <h4 style="color:#212529;margin-bottom:20px;"><strong><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Lacquering
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Lackierung
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Vernikleme
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></strong></h4> 
+        <a  style="max-width:35%;" href="images/alt/3.webp" data-lightbox="b"><img class="lazyload" src="images/kaynak/3.webp" alt="Vernikleme" style="max-width:35%;display:inline-block;"/></a>
+ <%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>       
+<p style="text-align:center;color: black;" style="max-width:15%;color:black">
+&#8658; Increases the resistance to damage.
+</p>
+</strong>  
+<strong>        
+<p style="text-align:center;color: black;" style="max-width:15%;color:black">
+&#8658; It can be applied to most surfaces.
+</p>
+</strong>
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>       
+<p style="text-align:center;color: black;" style="max-width:15%;color:black">
+&#8658; Erhöht die Widerstandsfähigkeit gegen Schaden.
+</p>
+</strong>  
+<strong>        
+<p style="text-align:center;color: black;" style="max-width:15%;color:black">
+&#8658; Es kann auf die meisten Oberflächen angewendet werden
+</p>
+</strong>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>       
+<p style="text-align:center;color: black;" style="max-width:15%;color:black">
 &#8658; Darbelere dayanıklılığı arttırır.
 </p>
 </strong>  
 <strong>        
-<p style="text-align:center;color: black;" style="max-width:25%;color:black">
+<p style="text-align:center;color: black;" style="max-width:15%;color:black">
 &#8658; Birçok yüzeye uygulanabilir.
 </p>
 </strong>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %>
+
 </div>       
     
 <div class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" id="Eskitme" style="display:table-cell;">
-        <h4 style="color:#212529;text-align:right;margin-bottom:20px;"><strong>Eskitme</strong></h4>
+        <h4 style="color:#212529;text-align:right;margin-bottom:20px;"><strong><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Accelerated Ageing
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Beschleunigtes Altern
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Eskitme
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></strong></h4>
         <a href="images/alt/1.webp" data-lightbox="c"><img class="lazyload" src="images/kaynak/2.webp" alt="Eskitme" style="max-width:35%;" align="right"/></a>
-<strong>        
+        <%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>        
+<p style="text-align:center;color: black;" style="max-width:35%;color:black">
+&#8658; It provides a nice, nostalgic look.
+</p>
+</strong>
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>        
+<p style="text-align:center;color: black;" style="max-width:35%;color:black">
+&#8658; Es bietet einen schönen, nostalgischen Look.
+</p>
+</strong>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>        
 <p style="text-align:center;color: black;" style="max-width:35%;color:black">
 &#8658; Hoş, nostaljik bir görüntü sağlar.
 </p>
 </strong>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %>
+
 </div>
 </div>
 </div>                          
@@ -454,16 +686,16 @@ text-align: center;
                <!-- Vendor -->
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		
+                <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+                <script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
-                <script src="js/slide.js"></script>
-                <script src="js/lightbox.js"></script>
-		
+                		
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
                 <script src="js/clicked.js"></script>
-                <script src="js/jquery.lazyload.min.js"></script>
+                <script src="js/lightbox.min.js"></script>
              
 <script>
 lightbox.option
@@ -486,16 +718,15 @@ lightbox.option
 		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css"/>
 		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css"/>
                 <link rel="stylesheet" href="vendor/animate/animate.min.css"/>
+                <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css"/>
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css"/>
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css"/>
 		<link rel="stylesheet" href="css/theme-elements.css"/>
                 
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="css/skins/default.css"/> 
-                
-                <!-- Added CSS -->
-                <link rel="stylesheet" href="css/slide.css"/>
+		<link rel="stylesheet" href="css/skins/default.css"/>  
                 
                 <!-- Head Libs -->
 		<script src="vendor/modernizr/modernizr.min.js"></script>
@@ -815,39 +1046,203 @@ width:100%;
                                 </section>                      
 </head>
 
-<div class="slideshow-container cover"> 
-<img class="mySlides fade cover" src="images/Anasayfa/<%=a%>.webp" alt="foto"/>
-
-<img class="mySlides fade cover lazyload"  src="images/Anasayfa/<%=b%>.webp" alt="foto"/>
-
-<img class="mySlides fade cover lazyload"  src="images/Anasayfa/<%=c%>.webp"  alt="foto"/>
-
-<img class="mySlides fade cover lazyload" src="images/Anasayfa/<%=d%>.webp"  alt="foto"/>        
+<div class="owl-carousel owl-theme nav-inside" data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}">
+                                                               <img class="img-fluid" src="images/Anasayfa/4.webp" alt="foto"/>
+                                                               <img class="img-fluid lazyload" src="images/Anasayfa/2.webp" alt="foto"/> 
+                                                               <img class="img-fluid lazyload" src="images/Anasayfa/3.webp" alt="foto"/> 
+                                                               <img class="img-fluid lazyload" src="images/Anasayfa/1.webp" alt="foto"/>
 </div>
 
 <div>
-<h1 class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" style="text-align:center;"><strong>Hizmetlerimiz</strong></h1>
+<h1 class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" style="text-align:center;margin-top:10px;"><strong><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Our Services
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Unsere Dienstleistungen
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            HİZMETLERİMİZ
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></strong></h1>
 </div>
                                                         
-<div class="container" style="margin-bottom:10px;width:100%">                                                        
+<div class="container appear-animation lazyload" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="500" style="margin-bottom:10px;width:100%">                                                        
 <div class="row" style="margin-top:10px;margin-bottom:30px;">
 <div class="col" style="text-align:center">
-        <a  class="btn" id="btn1" data-target="Kaplama" style="color:white;background-color:#0088CC;">Kaplama</a>
+        <a  class="btn" id="btn1" data-target="Kaplama" style="color:white;background-color:#0088CC;"><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Coating
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Glasur
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Kaplama
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></a>
 </div>
 <div class="col" style="text-align:center;width:100%">        
-        <a  class="btn" id="btn2" data-target="Vernikleme" style="color:white;background-color:#0088CC;">Vernikleme</a>
+        <a  class="btn" id="btn2" data-target="Vernikleme" style="color:white;background-color:#0088CC;"><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Lacquering
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Lackierung
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Vernikleme
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></a>
 </div>
 <div class="col" style="text-align:center;width:100%">
-        <a  class="btn" id="btn3" data-target="Eskitme" style="color:white;background-color:#0088CC;">Eskitme</a>
+        <a  class="btn" id="btn3" data-target="Eskitme" style="color:white;background-color:#0088CC;"><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Accelerated Ageing
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Beschleunigtes Altern
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Eskitme
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></a>
 </div>
 </div>
 
                                                                                                               
 <div id="content" class="col">
 <div class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" id="Kaplama" style="display:table-cell;width:100%">
-        <h4 style="color:#212529;text-align:left;margin-bottom:20px;"><strong>Bakır Kaplama</strong></h4>
+        <h4 style="color:#212529;text-align:left;margin-bottom:20px;"><strong><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Copper Plating
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Verkupferung
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Bakır Kaplama
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></strong></h4>
         <a href="images/kaynak/4.webp" data-lightbox="a"><img src="images/kaynak/4.webp" alt="Kaplama" style="max-width:35%;" align="left"/></a>
 
+        <%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>       
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; It can be easily reshaped.
+</p>
+</strong>
+        
+<strong>        
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; It can be coated to different surfaces.
+</p>
+</strong>      
+
+<strong>        
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; It is a special liner.
+</p>
+</strong>    
+
+<strong>        
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; It can transfer heat and electricity well.
+</p>
+</strong>
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>       
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; Es kann leicht umgeformt werden.
+</p>
+</strong>
+        
+<strong>        
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; Es kann auf verschiedene Oberflächen aufgetragen werden.
+</p>
+</strong>      
+
+<strong>        
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; Es ist ein spezieller Liner.
+</p>
+</strong>    
+
+<strong>        
+<p style="text-align: center;color: black;" style="max-width:35%;color:black">
+&#8658; Es kann Wärme und Strom gut übertragen.
+</p>
+</strong>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
 <strong>       
 <p style="text-align: center;color: black;" style="max-width:35%;color:black">
 &#8658; İyi dövülebilir.
@@ -871,33 +1266,147 @@ width:100%;
 &#8658; Üstün elektrik ve ısı iletkenliği vardır.
 </p>
 </strong>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %>  
+
 </div>
 
     
 <div class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" id="Vernikleme" style="display:table-cell;text-align:center;width:100%">
-        <h4 style="color:#212529;margin-bottom:20px;"><strong>Vernikleme</strong></h4> 
+        <h4 style="color:#212529;margin-bottom:20px;"><strong><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Lacquering
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Lackierung
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Vernikleme
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></strong></h4> 
         <a  style="max-width:35%;" href="images/alt/3.webp" data-lightbox="b"><img class="lazyload" src="images/kaynak/3.webp" alt="Vernikleme" style="max-width:35%;display:inline-block;"/></a>
 
-<strong>       
-<p style="float:right;text-align:center;color: black;" style="max-width:25%;color:black">
+ <%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>       
+<p style="float:left;color: black;" style="max-width:15%;color:black">
+&#8658; Increases the resistance to damage.
+</p>
+</strong>  
+<strong>        
+<p style="float:right;color: black;" style="max-width:15%;color:black">
+&#8658; It can be applied to most surfaces.
+</p>
+</strong>
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>       
+<p style="float:left;color: black;" style="max-width:15%;color:black">
+&#8658; Erhöht die Widerstandsfähigkeit gegen Schaden.
+</p>
+</strong>  
+<strong>        
+<p style="float:right;color: black;" style="max-width:15%;color:black">
+&#8658; Es kann auf die meisten Oberflächen angewendet werden
+</p>
+</strong>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>       
+<p style="float:left;color: black;" style="max-width:15%;color:black">
 &#8658; Darbelere dayanıklılığı arttırır.
 </p>
 </strong>  
 <strong>        
-<p style="float:left;text-align:center;color: black;" style="max-width:25%;color:black">
+<p style="float:right;color: black;" style="max-width:15%;color:black">
 &#8658; Birçok yüzeye uygulanabilir.
 </p>
 </strong>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %>
 </div>       
     
 <div class="appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="100" id="Eskitme" style="display:table-cell;">
-        <h4 style="color:#212529;text-align:right;margin-bottom:20px;"><strong>Eskitme</strong></h4>
+        <h4 style="color:#212529;text-align:right;margin-bottom:20px;"><strong><%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Accelerated Ageing
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Beschleunigtes Altern
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            Eskitme
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %></strong></h4>
         <a href="images/alt/1.webp" data-lightbox="c"><img class="lazyload" src="images/kaynak/2.webp" alt="Eskitme" style="max-width:35%;" align="right"/></a>
-<strong>        
+<%
+                                                                                                                        if(Language_Selected == null || Language_Selected.equals("ENG"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>        
+<p style="text-align:center;color: black;" style="max-width:35%;color:black">
+&#8658; It provides a nice, nostalgic look.
+</p>
+</strong>
+                                                                                                                    <%       
+                                                                                                                        }
+
+                                                                                                                     else if(Language_Selected.equals("GER"))
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>        
+<p style="text-align:center;color: black;" style="max-width:35%;color:black">
+&#8658; Es bietet einen schönen, nostalgischen Look.
+</p>
+</strong>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    
+                                                                                                                    else
+                                                                                                                        {
+                                                                                                                    %>
+                                                                                                                            <strong>        
 <p style="text-align:center;color: black;" style="max-width:35%;color:black">
 &#8658; Hoş, nostaljik bir görüntü sağlar.
 </p>
 </strong>
+                                                                                                                    <%       
+                                                                                                                        }
+                                                                                                                    %>
 </div>
 </div>
 </div>                          
@@ -951,16 +1460,18 @@ text-align: center;
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+                <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+                <script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
 
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
-                <script src="js/slide.js"></script>
-                <script src="js/lightbox.js"></script>
+                <script src="js/lightbox.min.js"></script>
 		
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
                 <script src="js/clicked.js"></script>
-                <script src="js/jquery.lazyload.min.js"></script>
+                
+                
              
 <script>
 lightbox.option
